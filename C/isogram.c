@@ -4,6 +4,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+
+//looks like excercism does not support strdup
+//so we define it ourself
 char *strdup(const char *str) {
     char *dup = malloc(strlen(str) + 1);
     if(dup)
