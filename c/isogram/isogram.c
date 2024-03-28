@@ -1,12 +1,10 @@
+#include "isogram.h"
 #include <string.h>
 #include <stdio.h>
-#include <stdbool.h>
 #include <ctype.h>
 #include <stdlib.h>
 
 
-//looks like excercism does not support strdup
-//so we define it ourself
 char *strdup(const char *str) {
     char *dup = malloc(strlen(str) + 1);
     if(dup)
@@ -32,11 +30,4 @@ bool is_isogram(const char phrase[]) {
         }
     }
     return true;
-}
-
-int main() {
-    printf("isograms is a isogram: %d\n", is_isogram("Alphabet"));
-    printf("isograms is a isogram: %d\n", is_isogram("thumbscrew-japingly"));
-
-    return 0;
 }
