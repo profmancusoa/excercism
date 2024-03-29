@@ -4,24 +4,16 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-
-char *strdup(const char *str) {
-    char *dup = malloc(strlen(str) + 1);
-    if(dup)
-        strcpy(dup, str);
-    
-    return dup;
-}
-
 bool is_isogram(const char phrase[]) {
     if(phrase == NULL) return false;
     
     int len = strlen(phrase);
     if(len > 0) {
+        char phrasel[len + 1];
         //copy and convert to lowercase phrase
-        char *phrasel = strdup(phrase);
         for(int i = 0; i < len; i++)
             phrasel[i] = tolower(phrase[i]);
+        phrasel[len] = '\0';
 
         for(int i = 0; i < len; i++) {
             char c = phrasel[i];
